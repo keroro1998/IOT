@@ -70,15 +70,18 @@ const char index_html[] PROGMEM = R"rawliteral(
     <span id="humidity">%HUMIDITY%</span>
     <sup class="units">%</sup>
   </p>
-
+  //Record historical data
   <p id="demo3">History</p>
+  //Historical temperature data
   <p id="demo">Temperature</p>
+  //Historical data for humidity
   <p id="demo2">Humidity</p>
  
 </body>
 
 <script>
 var i = 0;
+//Declaring a dynamic array
 var de =  ["History"];
 var tem = ["Temp:"];
 var hum = ["Humi:"];
@@ -87,6 +90,7 @@ setInterval(function ( ) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("temperature").innerHTML = this.responseText;
+        //Store in dynamic array
         tem.push(this.responseText)
   var x=document.getElementById("demo");
   x.innerHTML=tem;
@@ -98,13 +102,14 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/temperature", true);
   xhttp.send();
-}, 10000 ) ;
+}, 20000 ) ;
 
 setInterval(function ( ) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("humidity").innerHTML = this.responseText;
+        //Store in dynamic array
              hum.push(this.responseText)
   var x=document.getElementById("demo2");
   x.innerHTML=hum;
@@ -112,7 +117,7 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/humidity", true);
   xhttp.send();
-}, 10000 ) ;
+}, 20000 ) ;
 </script>
 </html>
 )rawliteral";
