@@ -70,11 +70,8 @@ const char index_html[] PROGMEM = R"rawliteral(
     <span id="humidity">%HUMIDITY%</span>
     <sup class="units">%</sup>
   </p>
-  //Record historical data
   <p id="demo3">History</p>
-  //Historical temperature data
   <p id="demo">Temperature</p>
-  //Historical data for humidity
   <p id="demo2">Humidity</p>
  
 </body>
