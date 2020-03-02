@@ -57,7 +57,7 @@ const char index_html[] PROGMEM = R"rawliteral(
     }
   </style>
 </head>
-<body>
+<body background="http://img.1sucai.com/tuku/yulantu/110314/292-11031406424048.jpg">
   <h2>Station Météo</h2>
   <p>
     <i class="fas fa-thermometer" style="color:#c00000;"></i> 
